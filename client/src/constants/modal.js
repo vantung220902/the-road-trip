@@ -1,0 +1,4 @@
+export const SHOW_MODEL = 'SHOW_MODEL';
+export const HIDE_MODEL = 'HIDE_MODEL';
+export const CHANGE_MODEL_CONTET = 'CHANGE_MODEL_CONTET ';
+export const CHANGE_MODEL_TITLE = 'CHANGE_MODEL_TITLE';

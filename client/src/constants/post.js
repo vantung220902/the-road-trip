@@ -1,0 +1,30 @@
+export const GET_POST = 'GET_POST';
+export const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
+
+export const ADD_POST = 'ADD_POST';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+
+export const LOAD_MORE_POST = 'LOAD_MORE_POST';
+export const LOAD_MORE_POST_SUCCESS = 'LOAD_MORE_POST_SUCCESS';
+
+export const MY_POST = 'MY_POST';
+export const MY_POST_SUCCESS = 'MY_POST_SUCCESS';
+
+export const FIND_POST = 'FIND_POST';
+export const FIND_POST_SUCCESS = 'FIND_POST_SUCCESS';
+
+export const UPDATE_POST = 'UPDATE_POST';
+export const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS';
+
+export const COUNT_POST = 'COUNT_POST';
+export const COUNT_POST_SUCCESS = 'COUNT_POST_SUCCESS';
+
+export const NUMBER_POST = 'NUMBER_POST';
+export const NUMBER_POST_SUCCESS = 'NUMBER_POST_SUCCESS';
+
+export const DELETE_POST = 'DELETE_POST';
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS';
+
+export const LIKE_POST = 'LIKE_POST';
+
+export const POST_ERROR = 'POST_ERROR';
