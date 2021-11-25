@@ -3,7 +3,6 @@ const styles = (theme) => {
         app: {
             width: 100,
             height: 100,
-            backgroundColor: 'red',
             marginTop: 96,
         },
     };

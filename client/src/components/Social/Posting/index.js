@@ -111,7 +111,7 @@ class Posting extends Component {
             <Card sx={{ boxShadow: 3 }} className={classes.app}>
                 <CardHeader
                     avatar={
-                        <NavLink to={`person/${post.idAuthor}`}>
+                        <NavLink to={post.idAuthor !== account.id?`person/${post.idAuthor}`:`me`}>
                             <Avatar
                                 sx={{ width: 56, height: 62 }}
                                 src={

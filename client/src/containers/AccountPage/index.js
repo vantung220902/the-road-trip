@@ -86,7 +86,6 @@ class AccountPage extends Component {
     handleDelete = () => {
         const { actionModal, classes, person } = this.props;
         const { showModel, ChangeModel, ChangeModelTitle, hideModel } = actionModal;
-
         showModel();
         ChangeModelTitle('Delete Ticket');
         ChangeModel((<Box className={classes.model}>
@@ -107,8 +106,9 @@ class AccountPage extends Component {
 
     }
     handleConfirmDelete = () => {
-        const { removeFriends, person, actionModal } = this.props;
-        removeFriends(person.id);
+        const { removeFriends, match, actionModal } = this.props;
+        const { id } = match.params;
+        removeFriends(id);
         const { hideModel } = actionModal;
         hideModel();
     }

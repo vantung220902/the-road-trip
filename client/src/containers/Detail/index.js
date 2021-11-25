@@ -91,12 +91,8 @@ class Detail extends Component {
                             <div className={classes.info}>
                                 <Button className={classes.iconBack}>
                                     <KeyboardBackspaceIcon />
-                                    <NavLink to="/" className={classes.navLink}>
-                                        <Typography
-                                            className={classes.textBack}
-                                        >
-                                            Back
-                                        </Typography>
+                                    <NavLink to="/" className={`${classes.navLink} ${classes.textBack}`}>
+                                      Back
                                     </NavLink>
                                 </Button>
                                 <Typography className={classes.heading}>
@@ -115,14 +111,13 @@ class Detail extends Component {
                                     View Map
                                 </Button>
                                 <Button
-                                    className={classes.report}
+                                    className={`${classes.report} ${classes.textReport}`}
                                     variant="contained"
                                     color="secondary"
                                 >
                                     <ReportProblemOutlinedIcon />
-                                    <Typography className={classes.textReport}>
-                                        Report this event
-                                    </Typography>
+                                    Report this event
+                                  
                                 </Button>
                             </div>
                             <div className={classes.formBuy}>
@@ -130,7 +125,10 @@ class Detail extends Component {
                                     Date & Time
                                 </Typography>
                                 <Typography className={classes.dateTime}>
-                                    {ticket.dateStart} to {ticket.dateEnd}
+                                    {ticket.dateStart ? ticket.dateStart.slice(0, 10)  : null}
+                                    <span className={classes.textBack}>
+                                        to
+                                    </span> {ticket.dateEnd ? ticket.dateEnd.slice(0, 10) : null}
                                 </Typography>
                                 <Typography className={classes.dateTime}>
                                     Time: {ticket.time}

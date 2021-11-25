@@ -14,11 +14,17 @@ class ListFriends extends Component {
         super(props);
         this.state = {
             id: -1,
+            listFriends: []
         }
     }
     componentDidMount() {
         const { getFriends } = this.props;
         getFriends(account.id);
+    }
+    componentDidUpdate(prevProps) {
+        if (prevProps.listFriends !== this.props.listFriends) {
+            this.setState({ listFriends: this.props.listFriends });
+        }
     }
     handleMessage = (id) => {
         const { showChatBox, watchMessage } = this.props;

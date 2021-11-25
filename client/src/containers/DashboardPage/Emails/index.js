@@ -37,13 +37,13 @@ class SendEmail extends Component {
             this.setState({ checked: true });
         }
     }
-    handleSendEmail = (data, email) => {
+    handleSendEmail = (data, email, data2) => {
         const { actionModal, sendEmail, listUsers } = this.props;
         const { hideModel } = actionModal;
         const { arrayIds } = this.state;
 
         if (email) {
-            sendEmail([email], data);
+            sendEmail([email], data, data2);
         } else {
             const array = [];
             arrayIds.forEach((id) => {
@@ -54,7 +54,7 @@ class SendEmail extends Component {
                 })
             });
 
-            sendEmail(array, data);
+            sendEmail(array, data, data2);
         }
         hideModel();
     }

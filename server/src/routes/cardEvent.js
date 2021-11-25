@@ -16,7 +16,6 @@ router.post(
 router.post('/buyTicket', passport.authenticate('jwt', { session: false }),
     CardEventController.buyTicket);
 
-
 router.patch('/restore',
     passport.authenticate('jwt', { session: false }),
     CardEventController.restorePayment);

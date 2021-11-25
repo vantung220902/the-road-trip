@@ -127,7 +127,7 @@ class Header extends Component {
                     icons={[
                         <Tab
                             key={1}
-                            value={0}
+                            value={1}
                             icon={
                                 <NavLink
                                     className={classes.navTabs}
@@ -141,11 +141,11 @@ class Header extends Component {
                         />,
                         <Tab
                             key={2}
-                            value={1}
+                            value={0}
                             icon={
                                 <NavLink
                                     className={classes.navTabs}
-                                    to={'/store'}
+                                    to={'/'}
                                 >
                                     <StorefrontOutlinedIcon
                                         className={classes.iconNav}

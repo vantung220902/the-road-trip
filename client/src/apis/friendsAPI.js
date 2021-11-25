@@ -53,7 +53,7 @@ export const declineRequestAPI = (id) => {
     });
 };
 export const removeFriendAPI = (friend) => {
-    return axiosService.delete(`${API_ENDPOINT}${url}/remove?id=${friend.id}&id2=${acc.id2}`, {
+    return axiosService.delete(`${API_ENDPOINT}${url}/remove?id=${friend.id}&id2=${acc.id}`, {
         headers: {
             Authorization: acc ? acc.Authorization : ''
         }

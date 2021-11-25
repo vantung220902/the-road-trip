@@ -21,28 +21,31 @@ class ListRequest extends Component {
         });
         getRequestFriends(account.id);
     }
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.listRequests !== this.props.listRequests) {
-    //         this.setState({
-    //             listRequests: this.props.listRequests,
-    //         });
+    componentDidUpdate(prevProps) {
+        if (prevProps.listRequests !== this.props.listRequests) {
+            this.setState({
+                listRequests: this.props.listRequests,
+            });
 
-    //     }
-    // }
-    handleAccept = (id) => {
+        }
+    }
+    handleAccept = (item) => {
         const { acceptFriends } = this.props;
         const { data } = this.state;
-        acceptFriends(id);
-        if (id === data.id) {
+        if (item) {
+            acceptFriends(item);
+        } else {
+            acceptFriends(data);
+        }
+        if (data) {
             this.setState({ data: null });
         }
-
     }
     handleDecline = (id) => {
         const { declineFriends } = this.props;
         declineFriends(id);
         const { data } = this.state;
-        if (id === data.id) {
+        if (data && id === data.id) {
             this.setState({ data: null });
         }
     }
@@ -62,8 +65,9 @@ class ListRequest extends Component {
                     }
                     {
                         listRequests.map((t, index) => {
-                            return (<Request key={index} id={t.id} handleAccept={this.handleAccept}
-                                name={t.fullName} avatar={t.avt} handleDecline={this.handleDecline} />)
+                            return (<Request key={index} name={t.fullName} id={t.id}
+                                avatar={t.avt} item={t} handleAccept={this.handleAccept}
+                                handleDecline={this.handleDecline} />)
                         })
                     }
 

@@ -25,10 +25,10 @@ export const requestFriendsSuccess = (data) => {
     };
 };
 
-export const acceptFriends = (id) => {
+export const acceptFriends = (item) => {
     return {
         type: TYPES.ACCEPT_FRIEND,
-        payload: { id }
+        payload: { item }
     };
 };
 export const declineFriends = (id) => {

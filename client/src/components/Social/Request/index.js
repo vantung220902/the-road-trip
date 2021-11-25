@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styles from './styles';
 class Request extends Component {
     render() {
-        const { classes, avatar, name, handleAccept, handleDecline, id } = this.props;
+        const { classes, avatar, name, handleAccept, handleDecline, item,id } = this.props;
         return (
             <div className={classes.app}>
                 <Box className={classes.container}>
@@ -22,7 +22,7 @@ class Request extends Component {
                             className={classes.btn}
                             variant="contained"
                             color="primary"
-                            onClick={() => { handleAccept(id) }}
+                            onClick={() => { handleAccept(item) }}
                         >
                             Accept
                         </Button>

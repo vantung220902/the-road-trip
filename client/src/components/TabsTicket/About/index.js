@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles';
 import { withStyles, Typography } from '@material-ui/core';
+import parse from "html-react-parser";
 class About extends Component {
     render() {
         const { classes, description, dateStart, dateEnd, time } = this.props;
@@ -19,7 +20,7 @@ class About extends Component {
                     gutterBottom
                     className={classes.body}
                 >
-                    {description}
+                    {parse(description)}
                     <br />
                     <br />
                     We want to empower as many students and teachers around the

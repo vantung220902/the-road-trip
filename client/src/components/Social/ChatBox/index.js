@@ -36,7 +36,6 @@ class Message extends Component {
                 watchMessage(data.idUSend);
             }
             this.setState({ list: [...listMessage, data], checked: false, idRSocket: data.idUSend });
-
         });
     }
     setCurrentMessage = (value) => {
@@ -57,7 +56,7 @@ class Message extends Component {
         today = yyyy + '-' + mm + '-' + dd;
         if (currentMessage !== "") {
             const messageData = {
-                id: last.id + 2,
+                id: last ? last.id + 2 : 1000,
                 idUSend: account.id,
                 idUReceive: idRSocket !== -1 ? idRSocket : idReceive,
                 body: currentMessage,

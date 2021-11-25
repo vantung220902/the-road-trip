@@ -3,7 +3,7 @@ class EmailController {
 
     sendEmail(req, res, next) {
         try {
-            const { array, content } = req.body;
+            const { array, content, arrayImg } = req.body;
             const to = array.toString();
             const { subject, text } = content;
             let mailTransporter = nodemailer.createTransport({
@@ -18,19 +18,23 @@ class EmailController {
                 to: to,
                 subject: subject,
                 text: text,
+                html:"",
+                attachments: arrayImg
             };
 
             mailTransporter.sendMail(mailDetails, function (err, data) {
                 if (err) {
                     console.log('Error Occurs');
                 } else {
-                    console.log('Email sent successfully');
+                    console.log('Email sent successfully');  
                 }
+               
             });
-            return res.status(200).json({ checked: true })
+          
         } catch (error) {
             console.error(error);
         }
+        return res.status(200).json({ checked: true });
     }
 
 }

@@ -12,7 +12,7 @@ router.post(
     passport.authenticate('jwt', { session: false }),
 );
 
-router.patch('/accept/:id', passport.authenticate('jwt', { session: false }),InvitationController.updateState);
+router.patch('/accept/:id',InvitationController.updateState);
 
 router.delete('/delete/:id', passport.authenticate('jwt', { session: false }), InvitationController.deleteInvitation);
 

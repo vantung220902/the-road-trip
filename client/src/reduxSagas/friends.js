@@ -56,9 +56,9 @@ function* getFriends({ payload }) {
     }
 }
 function* acceptRequest({ payload }) {
-    const { id } = payload;
+    const { item } = payload;
     try {
-        const response = yield call(acceptRequestAPI, id);
+        const response = yield call(acceptRequestAPI, item.id);
         const { data, status } = response;
         if (status === 200) {
             yield put(actionFriends.checkFriendsSuccess(data));

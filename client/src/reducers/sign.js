@@ -144,7 +144,7 @@ const reducer = (state = init, action) => {
             };
         case TYPES.SIGN_OUT:
             return {
-                account: null,
+                ...init
             };
         case TYPES.DELETED_USER:
             return {

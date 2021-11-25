@@ -52,7 +52,7 @@ class Friends {
     remove(friend) {
         return new Promise((resolve, reject) => {
             db.query(`
-            DELETE  FROM friends WHERE
+            DELETE FROM friends WHERE
             ((person1ID = ? and person2ID=?) or
              (person1ID=? and person2ID= ?)) and state = 1
             `, [friend.id, friend.id2, friend.id2, friend.id], (err, res) => {

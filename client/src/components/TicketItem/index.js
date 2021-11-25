@@ -3,9 +3,11 @@ import styles from './styles';
 import { withStyles, Grid, Card } from '@material-ui/core';
 import './index.css';
 import { NavLink } from 'react-router-dom';
+import parse from "html-react-parser";
 class TicketItem extends Component {
     render() {
         const { classes, ticket, handleTicket, view } = this.props;
+        
         return (
             <Grid
                 item
@@ -34,7 +36,7 @@ class TicketItem extends Component {
                                 <div className="product-text">
                                     <h1>{ticket.name}</h1>
                                     <h2>
-                                        AuThor:<b>{ticket.author}</b>
+                                        AuThor:<b>{ticket.fullName}</b>
                                     </h2>
                                     <h2>
                                         Date Start:<b>{ticket.dateStart ?
@@ -42,7 +44,7 @@ class TicketItem extends Component {
                                     </h2>
                                     <div className="description">
                                         <p className="descriptionText">
-                                            {ticket.description}
+                                            {parse(ticket.description)}
                                         </p>
                                     </div>
                                 </div>

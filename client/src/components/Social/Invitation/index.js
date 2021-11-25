@@ -18,10 +18,10 @@ class Invitation extends Component {
         this.setState({ action: true });
     }
     render() {
-        const { classes, id, name, image, avatar, deleteInvitation } = this.props;
+        const { classes, id, name, image, avatar, deleteInvitation, idTicket } = this.props;
         const { action } = this.state;
         if (action) {
-            return <Redirect to={`detail/${id}`} push={true} />
+            return <Redirect to={`detail/${idTicket}`} push={true} />
         }
         return (
             <div className={classes.app}>

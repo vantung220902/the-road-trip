@@ -17,7 +17,6 @@ class ListInvitations extends Component {
     componentDidMount() {
         const { watchInvitation } = this.props;
         let acc = JSON.parse(localStorage.getItem('account'));
-
         socket.on("receive_invitation", (data) => {
             watchInvitation(acc.id);
             this.setState({ checked: data.checked });
@@ -41,6 +40,7 @@ class ListInvitations extends Component {
                                 <Invitation
                                     key={invitation.id}
                                     id={invitation.id}
+                                    idTicket={invitation.idTicket}
                                     idAuthor={invitation.idAuthor}
                                     name={invitation.name}
                                     image={invitation.image}

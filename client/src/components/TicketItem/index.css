@@ -71,13 +71,14 @@
 
 .product-text p {
   height: 125px;
-  margin: 0 0 0 38px;
+  text-align: justify;
   font-family: 'Playfair Display', serif;
   color: #8d8d8d;
   line-height: 1.7em;
   font-size: 15px;
   font-weight: lighter;
   overflow: hidden;
+  margin: 0 8px;
 }
 
 .product-price-btn {
@@ -92,7 +93,8 @@
 }
 
 .product-price-btn p {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   height: 50px;
   font-family: 'Trocchi', serif;
   margin: 0 0 0 38px;
@@ -109,7 +111,6 @@
 }
 
 .product-price-btn button {
-  float: right;
   display: inline-block;
   height: 50px;
   width: 176px;

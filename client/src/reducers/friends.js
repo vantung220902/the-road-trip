@@ -22,7 +22,7 @@ const myArray = (listRequests, id) => {
     return listRequests;
 }
 const reducer = (state = init, action) => {
-    let data, id, newListRequests = null;
+    let data, id, item, newListRequests = null;
     switch (action.type) {
         case TYPE.CHECK_FRIEND:
             return {
@@ -35,11 +35,16 @@ const reducer = (state = init, action) => {
                 isFriend: parseInt(data[0].state, 10)
             }
         case TYPE.ACCEPT_FRIEND:
-            id = action.payload.id;
-            newListRequests = myArray(state.listRequests, id);
+            item = action.payload.item;
+            newListRequests = myArray(state.listRequests, item.id);
             return {
                 ...state,
-                listRequests: newListRequests
+                listRequests: newListRequests,
+                listFriends: [
+                    ...state.listFriends,
+                    item
+                ]
+
             }
         case TYPE.REMOVE_FRIEND:
             return {

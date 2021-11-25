@@ -4,7 +4,7 @@ import renderTextField from '../../../../components/FormHelper/TextField';
 import { compose } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-
+import DropImg from '../../../../components/DropZone';
 import {
     Grid,
     withStyles,
@@ -36,12 +36,19 @@ class FormTransaction extends Component {
         const avt = optionElement.getAttribute('data-avt');
         this.setState({ email: email, avt: avt });
     }
+    UNSAFE_componentWillMount() {
+        this.valueFiles = [];
+    }
+    onHandleChang = (value) => {
+        if (value !== undefined) {
+            this.valueFiles.push(value);
+        }
 
-   
+    };
     onHandleSubmit = (value) => {
         const { handleSendEmail, email } = this.props;
-
-        handleSendEmail(value, email);
+        handleSendEmail(value, email, this.valueFiles);
+        this.valueFiles = [];
     }
 
     render() {
@@ -76,6 +83,9 @@ class FormTransaction extends Component {
                                 component={renderTextField}
                                 validate={this.required}
                             />
+                        </Grid>
+                        <Grid item md={12} xs={12}>
+                            <DropImg onHandleChang={this.onHandleChang} />
                         </Grid>
                         <Grid item md={12}>
                             <Grid container className={classes.containerBtn}>
